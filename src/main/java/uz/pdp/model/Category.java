@@ -20,10 +20,13 @@ public class Category {
     @Column(unique = true, nullable = false)
     private String name;
 
+    @Column(columnDefinition = "text")
+    private String description;
+
+    private String shortDescription;
+
 
     private boolean isActive;
-
-
 
 
 }

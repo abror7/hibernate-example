@@ -7,15 +7,18 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Entity(name = "passports")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name = "products")
-public class Product {
+public class Passport {
     @Id
+    @GeneratedValue
     private Integer id;
-    private String name;
-    private Double price;
 
+    @Column(unique = true, nullable = false)
+    private String serialNumber;
 
+    @OneToOne
+    private Employee employee;
 }
